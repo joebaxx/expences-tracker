@@ -5,6 +5,13 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
-  title = 'app works!';
+  views: Object[] = [
+    { 
+      name: 'Categories',
+      description: 'Manage your categories',
+      icon: 'settings'
+    }
+  ]
 }
