@@ -4,3 +4,8 @@
 md-nav-list a:hover{
     text-decoration: none;
 }
+
+md-input,md-select{
+    margin: 8px 0;
+    width: 100%
+}
