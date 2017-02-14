@@ -11,5 +11,8 @@ export class ExpencesFormComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  
+  onAddClick(){
+    debugger;
+  }
 }
