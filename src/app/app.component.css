@@ -1,0 +1,7 @@
+
+button.addButton {
+    position: absolute;
+    right: 3%;
+    top: 34px;
+    z-index: 1;
+}
