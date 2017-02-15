@@ -1,30 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { ExpencesService } from '../expences.service';
 
 @Component({
   selector: 'expences-list',
   templateUrl: './expences-list.component.html',
-  styleUrls: ['./expences-list.component.css']
+  styleUrls: ['./expences-list.component.css'],
+  providers: [ ExpencesService ]
 })
 export class ExpencesListComponent implements OnInit {
   expences: any[];
-  constructor() { }
+  
+  constructor(private _expenceService: ExpencesService) { }
 
   ngOnInit() {
-  this.expences = [
-    {
-      date: new Date(),
-      amount: 10,
-      comment: 'Comment 1.',
-      category: 'Food'
-    },
-    {
-      date: new Date(),
-      amount: 54.6,
-      comment: 'Comment 2.',
-      category: 'Food'
-    }
-  ]
-
+    this.expences = this._expenceService.get();
   }
 
 }
