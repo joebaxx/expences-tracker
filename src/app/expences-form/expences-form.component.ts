@@ -17,6 +17,13 @@ export class ExpencesFormComponent implements OnInit {
   }
   
   onAddClick(form){
-    this._expenceService.add(this.expence);
+    var expence = new Expence(
+      form['amount'].value, 
+      form['comment'].value, 
+      form['category'].value, 
+      form['date'].value
+    );
+
+    this._expenceService.add(expence);
   }
 }
