@@ -3,24 +3,24 @@
         New expence
     </md-card-title>
     <md-card-content>
-        <form #f>
-            <md-input ngModel placeholder="Date" type="date" name="date"></md-input>
-            <md-input ngModel placeholder="Amount" type="number" name="amount"></md-input>
-            <md-input ngModel placeholder="Comment" type="text" name="comment"></md-input>
-            <md-select ngModel placeholder="Category" name="category">
-                <md-option>
+        <form>
+            <md-input [(ngModel)]="_date" placeholder="Date" type="date" name="date"></md-input>
+            <md-input [(ngModel)]="_amount" placeholder="Amount" type="number" name="amount"></md-input>
+            <md-input [(ngModel)]="_comment" placeholder="Comment" type="text" name="comment"></md-input>
+            <md-select [(ngModel)]="_category" placeholder="Category" name="category">
+                <md-option value="Category1">
                     Category1
                 </md-option>
-                <md-option>
+                <md-option value="Category2">
                     Category2
                 </md-option>
-                <md-option>
+                <md-option value="Category3">
                     Category3
                 </md-option>
             </md-select>
         </form>
     </md-card-content>
     <md-card-actions align="end">
-        <button md-raised-button (click)="onAddClick(f)">Submit</button>
+        <button md-raised-button (click)="onAddClick()">Submit</button>
     </md-card-actions>
 </md-card>  
