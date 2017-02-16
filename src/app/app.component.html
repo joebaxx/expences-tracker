@@ -17,6 +17,6 @@
             <md-icon>add</md-icon>
         </button>
     </md-toolbar>
-    <expences-form *ngIf="formShowing"></expences-form>
-    <expences-list></expences-list>
+    <expences-form *ngIf="formShowing" (addExpence)="onAddExpence($event, expencesList)"></expences-form>
+    <expences-list #expencesList></expences-list>
 </md-sidenav-layout>

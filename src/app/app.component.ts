@@ -15,4 +15,8 @@ export class AppComponent {
       icon: 'settings'
     }
   ]
+
+  onAddExpence(expence, expencesList){
+    expencesList.expences.push(expence);
+  }
 }

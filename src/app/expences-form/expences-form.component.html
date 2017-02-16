@@ -5,9 +5,9 @@
     <md-card-content>
         <form #f>
             <md-input ngModel placeholder="Date" type="date" name="date"></md-input>
-            <md-input ngModel placeholder="Amount" type="number" name="Amount"></md-input>
-            <md-input ngModel placeholder="Comment" type="text" name="Comment"></md-input>
-            <md-select ngModel placeholder="Category" name="Category">
+            <md-input ngModel placeholder="Amount" type="number" name="amount"></md-input>
+            <md-input ngModel placeholder="Comment" type="text" name="comment"></md-input>
+            <md-select ngModel placeholder="Category" name="category">
                 <md-option>
                     Category1
                 </md-option>
@@ -20,7 +20,7 @@
             </md-select>
         </form>
     </md-card-content>
-    <md-card-actions  align="end">
+    <md-card-actions align="end">
         <button md-raised-button (click)="onAddClick(f)">Submit</button>
     </md-card-actions>
 </md-card>  

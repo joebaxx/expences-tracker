@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ExpencesService } from '../expences.service';
 import { Expence } from '../expence';
 
@@ -9,6 +9,10 @@ import { Expence } from '../expence';
   providers: [ ExpencesService ]
 })
 export class ExpencesFormComponent implements OnInit {
+
+  @Output()
+  addExpence: EventEmitter<Expence> = new EventEmitter<Expence>();
+
   expence = new Expence(1, 'comment', 'cat3', new Date());
 
   constructor(private _expenceService: ExpencesService) { }
@@ -17,13 +21,15 @@ export class ExpencesFormComponent implements OnInit {
   }
   
   onAddClick(form){
+    
     var expence = new Expence(
       form['amount'].value, 
       form['comment'].value, 
-      form['category'].value, 
+      null,// form['category'] is null  
       form['date'].value
     );
 
     this._expenceService.add(expence);
+    this.addExpence.emit(expence);
   }
 }
